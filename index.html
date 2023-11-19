@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>weather</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ time }}</p>
+      <p>{{ date }}</p>
+      <p>{{ weekday }}</p>
+      <p v-if="selected">{{ 'Weather is ' + weather }}</p>
+      <p v-if="selected">{{ 'Temperature is ' + temperature }}</p>
+      <p v-if="selected">{{ 'Humidity is ' + humidity }}</p>
+      <select id="capital_select_text" v-model="selected">
+        <option disabled value="">Select a capital</option>
+        <option v-for="capital in capitals" :value="capital">
+          {{ capital }}
+        </option>
+      </select>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
